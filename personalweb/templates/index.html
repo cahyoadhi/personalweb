@@ -2,14 +2,29 @@
 {% load static %}
 {% block content %}
 
+{% if messages %}  
+    {% for message in messages %}
+    <script type="text/javascript">
+        Swal.fire({
+            icon: 'success',
+            title: '{{message}}',
+        }).then((result) => {
+            window.location.href = "/"
+        })
+    </script>  
+    {% endfor %}
+{% endif %}
 <nav >
-    <div class="navbar-fix bg-sky-800 text-white w-full z-10 fixed -top-16 duration-75" id="navbar">
-        <ul class=" grid grid-cols-4 my-auto text-center py-5">
-            <li><a href="#home" class="scrolling font-semibold">HOME</a></li>
-            <li><a href="#aboutme" class="scrolling font-semibold">ABOUT</a></li>
-            <li><a href="#project" class="scrolling font-semibold">PROJECT</a></li>
-            <li><a href="#contact" class="scrolling font-semibold">CONTACT</a></li>
-        </ul>
+    <div class="navbar-fix bg-slate-800 text-white w-full z-10 fixed -top-16 duration-75 border-slate-700 border-b-4 border-solid" id="navbar">
+        <div class="w-[100vh] mx-auto">
+            <ul class=" grid grid-cols-4 py-5 gap-0 text-center ">
+                <li><a href="#home" class="scrolling font-semibold">HOME</a></li>
+                <li><a href="#aboutme" class="scrolling font-semibold">ABOUT</a></li>
+                <li><a href="#project" class="scrolling font-semibold">PROJECT</a></li>
+                <li><a href="#contact" class="scrolling font-semibold">CONTACT</a></li>
+            </ul>       
+        </div>
+
     </div>
 </nav>
 
@@ -22,13 +37,12 @@
 <section class="h-screen w-full bg-slate-800" id="home">
     <div id="particles-js" class="w-full h-screen bg-cover bg-center ">
         <div class="wrapper absolute h-max  inset-0 m-auto " >
-            <div class="image-wrapper border-4 rounded-full w-32 h-32 overflow-hidden border-sky-700 mx-auto">
+            <div class="image-wrapper border-4 border-sky-700 rounded-full w-32 h-32 overflow-hidden mx-auto">
                 <img src="{% static 'images/photo.png' %}" class="object-cover h-full w-full p-[1px] rounded-full">
             </div>
             <div class="text-wrapper text-4xl font-semibold text-white text-center my-6">
                 <h1>Hi <span class="wave-emoji">👋</span></h1>
                 <h1 class="my-4"><span id="typewrite"></span></h1>
-                <a href="https://www.linkedin.com/in/cahyo-adhianto-614a11208/"><i class="fa-brands fa-linkedin text-5xl pt-16"></i></a>
             </div>      
 
         </div>        
@@ -39,50 +53,86 @@
     </div>
 </section>
 
-<section class="h-screen bg-slate-800" id="aboutme">
+<section class="h-screen bg-slate-700 grid grid-rows-3" id="aboutme" >
     <div class="wrapper pt-[5%]">
         <div class="text-wrapper text-4xl font-poppins font-semibold text-white text-center">
             <h1>About Me</h1>
         </div>    
-        <div class="underline border-sky-700 border-b-4 border-solid m-auto w-20 py-1"></div>
+        <div class="underline border-sky-600 border-b-4 border-solid m-auto w-20 py-1"></div>
     </div>
-    <div class="grid grid-cols-2 justify-between  py-16">
-        <div class="pl-48 pr-5 pt-10 text-justify text-white text-l font-light">
-            <h1 class="text-3xl font-semibold">TESTS</h1>
+    <div class="px-45 pt-10 text-pl-48 text-white text-l font-light w-[80vh] mx-auto text-center">
+        <h1 class="text-3xl font-semibold text-sky-600">Let me introduce myself.</h1>
+        <br>
+        <p class="text-justify"> I've been a freelancer for almost a year, making automation scripts with selenium python, web scraping , and also creating web with django. In my free time, I always learn new things, because I like it. I will continue to make improvements, and learning new things.</p>
+        <a href=""><h1 class="text-l font-semibold text-sky-600 my-4">DOWNLOAD CV</h1></a>
+    </div>
+    <div class="grid grid-rows-2 justify-center py-16">
+        <div class="px-48 pt-10 text-pl-48 text-white text-l font-light w-[90vh] text-center">
+            <h1 class="text-3xl font-semibold text-sky-600">Skills</h1>
             <br>
-            <p>Reprehenderit in ullamco dolor ad laboris. Deserunt ipsum aliqua magna cupidatat eiusmod tempor qui et ipsum aliqua do mollit. Est est aliqua Lorem in elit cillum minim exercitation. Aute ex ut nulla commodo tempor sit reprehenderit. Consequat aliqua culpa ipsum laborum ullamco exercitation cupidatat irure qui ea dolor.</p>
-            <br>
-            <p>Reprehenderit in ullamco dolor ad laboris. Deserunt ipsum aliqua magna cupidatat eiusmod tempor qui et ipsum aliqua do mollit. Est est aliqua Lorem in elit cillum minim exercitation. Aute ex ut nulla commodo tempor sit reprehenderit. Consequat aliqua culpa ipsum laborum ullamco exercitation cupidatat irure qui ea dolor.</p>
-            <br>
-            <p>Reprehenderit in ullamco dolor ad laboris. Deserunt ipsum aliqua magna cupidatat eiusmod tempor qui et ipsum aliqua do mollit. Est est aliqua Lorem in elit cillum minim exercitation. Aute ex ut nulla commodo tempor sit reprehenderit. Consequat aliqua culpa ipsum laborum ullamco exercitation cupidatat irure qui ea dolor.</p>
-        </div>
-        <div class="pr-48 pl-5 pt-10 text-justify text-white text-l font-light">
-            <h1 class="text-3xl font-semibold">TESTS</h1>
-            <br>
-            <p>Reprehenderit in ullamco dolor ad laboris. Deserunt ipsum aliqua magna cupidatat eiusmod tempor qui et ipsum aliqua do mollit. Est est aliqua Lorem in elit cillum minim exercitation. Aute ex ut nulla commodo tempor sit reprehenderit. Consequat aliqua culpa ipsum laborum ullamco exercitation cupidatat irure qui ea dolor.</p>
-            <br>
-            <p>Reprehenderit in ullamco dolor ad laboris. Deserunt ipsum aliqua magna cupidatat eiusmod tempor qui et ipsum aliqua do mollit. Est est aliqua Lorem in elit cillum minim exercitation. Aute ex ut nulla commodo tempor sit reprehenderit. Consequat aliqua culpa ipsum laborum ullamco exercitation cupidatat irure qui ea dolor.</p>
-            <br>
-            <p>Reprehenderit in ullamco dolor ad laboris. Deserunt ipsum aliqua magna cupidatat eiusmod tempor qui et ipsum aliqua do mollit. Est est aliqua Lorem in elit cillum minim exercitation. Aute ex ut nulla commodo tempor sit reprehenderit. Consequat aliqua culpa ipsum laborum ullamco exercitation cupidatat irure qui ea dolor.</p>
+            <div class="skills grid grid-cols-5">
+                <div class="image-wrapper w-20 h-20 rounded-full overflow-hidden border-4 border-sky-700 p-[2%]">
+                    <img src="{% static 'images/python.png' %}" alt="" class="object-cover rounded-full">
+                </div>
+                <div class="image-wrapper w-20 h-20 rounded-full overflow-hidden border-4 border-sky-700 p-[2%]">
+                    <img src="{% static 'images/django.png' %}" alt="" class="object-cover rounded-full">
+                </div>
+                <div class="image-wrapper w-20 h-20 rounded-full overflow-hidden border-4 border-sky-700 p-[2%]">
+                    <img src="{% static 'images/rest.png' %}" alt="" class="object-cover rounded-full">
+                </div>
+                <div class="image-wrapper w-20 h-20 rounded-full overflow-hidden border-4 border-sky-700 p-[2%]">
+                    <img src="{% static 'images/css-html.png' %}" alt="" class="object-cover rounded-full">
+                </div>
+                <div class="image-wrapper w-20 h-20 rounded-full overflow-hidden border-4 border-sky-700 p-[2%]">
+                    <img src="{% static 'images/flutter.png' %}" alt="" class="object-cover rounded-full">
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="h-screen bg-slate-800 w-full" id="project">
     <div class="wrapper pt-[5%]">
-        <div class="text-wrapper text-4xl font-poppins font-semibold text-white text-center">
-            <h1>My Project</h1>
-        </div>
-        <div class="underline border-sky-700 border-b-4 border-solid m-auto w-20 py-1"></div>
+        <h1 class="text-wrapper text-4xl font-poppins font-semibold text-white text-center">Project</h1>
+        <div class="underline border-sky-600 border-b-4 border-solid m-auto w-20 py-1"></div>
+        <br>
+       
     </div>
 </section>
 
-<section class="h-screen bg-slate-800" id="contact">
+<section class="h-[100vh] bg-slate-700" id="contact">
     <div class="wrapper pt-[5%]">
         <div class="text-wrapper text-4xl font-poppins font-semibold text-white text-center">
-            <h1>Hire Me</h1>
+            <h1>Contact</h1>
         </div>    
-        <div class="underline border-sky-700 border-b-4 border-solid m-auto w-20 py-1"></div>
+        <div class="underline border-sky-600 border-b-4 border-solid m-auto w-20 py-1"></div>
+        <div class="mail w-[50vw] mx-auto">
+            <form method="post">
+                {% csrf_token %}
+                <label for="fname" class="text-white">Name</label>
+                <input type="text" id="fname" name="name" minlength="3" placeholder="Your name.." required>
+            
+                <label for="lname" class="text-white">Subject</label>
+                <input type="text" id="lname" name="subject" minlength="3" placeholder="Your last name.." required>
+
+            
+                <label for="subject" class="text-white">Message</label>
+                <textarea  id="msg" name="message" minlength="10" placeholder="Write something.." style="height:200px" required></textarea>
+            
+                <input type="submit" value="Submit" class="w-24 bg-sky-700">
+            
+            </form>
+        </div>
+        <div class="text-wrapper text-4xl font-semibold text-white text-center ">
+            <a href="mailto:cahyoadhianto2507@gmail.com"><i class="fa-solid fa-envelope text-5xl pt-16 px-2"></i></a>
+            <a href="https://www.linkedin.com/in/cahyo-adhianto-614a11208/"><i class="fa-brands fa-linkedin text-5xl pt-16 px-2"></i></a>
+            <a href="https://github.com/cahyoadhi"><i class="fa-brands fa-github text-5xl pt-16 px-2"></i></a>
+        </div>
+        <div class="text-wrapper  text-white text-center my-6">
+            <i class="fa-solid fa-location-dot text-4xl pt-16 px-2"></i>
+            <p>Bekasi, West Java - Indonesia</p>
+            
+        </div>
     </div>
 </section>
 
