@@ -30,7 +30,7 @@
 
 <aside>
     <div class="fixed text-white bottom-0 right-0 p-10 hidden text-5xl font-semibold text-white" id="gotop">
-        <a href="#aboutme" class="scrolling"><i class="fa-solid fa-circle-chevron-up my-9 cursor-pointer motion-safe:animate-bounce"></i></a>
+        <a href="#aboutme" class="scrolling"><i class="fa-solid fa-circle-chevron-up my-9 cursor-pointer"></i></a>
     </div>
 </aside>
 
@@ -137,20 +137,27 @@
 </section>
 
 <script>
-    window.onscroll = function() {scrollFunction()};
+    $(document).ready(function() {
+    var aboveHeight = $('section').outerHeight();
+    height = aboveHeight - 10
+    heightTwo = aboveHeight*2-10
 
-    function scrollFunction() {
-    if (document.body.scrollTop > 900 || document.documentElement.scrollTop > 900) {
-        document.getElementById("navbar").style.top = "0";
-    } else {
-        document.getElementById("navbar").style.top = "-4rem";
-    }
-    if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
-        document.getElementById("gotop").style.display = "block";
-    } else {
-        document.getElementById("gotop").style.display = "none";
-    }
-    }
+    $(window).scroll(function(){
+        if ($(window).scrollTop() > height){
+            $('#navbar').css('top','0');
+        } 
+        else {
+            $('#navbar').css('top','-4rem');
+        }
+        if ($(window).scrollTop() > heightTwo){
+            $('#gotop').css('display','block');
+        } 
+        else {
+            $('#gotop').css('display','none');
+        }
+        
+    });
+    });
 </script>
 
 {% endblock %}

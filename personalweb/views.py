@@ -10,6 +10,6 @@ def homePage(request):
         newemail.subject = request.POST.get('subject')
         newemail.message = request.POST.get('message')
         newemail.save()
-        messages.success(request, "Email sent")
+        messages.success(request, "Messages sent")
     context = {}
     return render (request, 'index.html', context)
