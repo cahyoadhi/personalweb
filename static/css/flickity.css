@@ -77,23 +77,8 @@ https://flickity.metafizzy.co
   
   /* ---- previous/next buttons ---- */
   
-  .flickity-prev-next-button {
-    top: 50%;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    /* vertically center */
-    transform: translateY(-50%);
-  }
 
- .small .flickity-prev-next-button {
-    top: 90%;
-    width: 44px;
-    height: 44px;
-    /* vertically center */
-    transform: translateY(-50%);
-  }
-  
+
   .flickity-prev-next-button.previous { left: 10px; }
   .flickity-prev-next-button.next { right: 10px; }
   /* right to left */
@@ -165,12 +150,6 @@ body { font-family: sans-serif; }
 
 /* cell number */
 
-.small .flickity-prev-next-button {
-  width: 50px;
-  height: 50px;
-  background: transparent;
-}
-
 /* big buttons, no circle */
 .flickity-prev-next-button {
   width: 100px;
@@ -178,9 +157,7 @@ body { font-family: sans-serif; }
   background: transparent;
 }
 /* arrow color */
-.flickity-prev-next-button .arrow {
-  fill: white;
-}
+
 .flickity-prev-next-button.no-svg {
   color: white;
 }
@@ -205,20 +182,49 @@ body { font-family: sans-serif; }
   background: white;
 }
 
-
-@media screen and (max-width: 838px) {
-  .navbar-fix {
-    display: none;
-  }
+.flickity-prev-next-button .arrow {
+  fill: white;
 }
 
-@media screen and (max-width: 786px) {
-  .texts {
-    display: block;
-  }
-  #aboutme{
-    width: max-content;
-    height: 100vh;
-  }
+.small .flickity-page-dots .dot.is-selected {
+  border: 2px solid #0369a1;
 }
 
+
+.small .flickity-page-dots .dot {
+  width: 5px;
+  height: 5px;
+  opacity: 1;
+  background: transparent;
+  border: 2px solid white;
+}
+
+.small .flickity-prev-next-button .arrow {
+  fill: #0369a1;
+}
+
+.small .flickity-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.small .flickity-prev-next-button {
+  background: transparent;
+}
+
+.small .flickity-prev-next-button {
+  top: 10%;
+  width: 30px;
+  height: 30px;
+  /* vertically center */
+  transform: translateY(-50%);
+}
+
+.flickity-prev-next-button {
+  bottom: 20%;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  /* vertically center */
+  transform: translateY(-50%);
+}

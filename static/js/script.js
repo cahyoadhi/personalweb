@@ -58,9 +58,9 @@ ScrollReveal({
     duration: 7000,
 };
   
-  ScrollReveal().reveal('.wrapper, .texts, #typewrite', {delay:200, slideUp});
-  ScrollReveal().reveal('.icon-sosial a', {delay:200, origin:'bottom',interval:400});
-  ScrollReveal().reveal('.mail', {delay:2100, origin:'right',  opacity: 0,});
+  ScrollReveal().reveal('.wrapper,  #typewrite, .intro, .skills, .gallery ', {delay:200, slideUp});
+  ScrollReveal().reveal('.icon-sosial a, .skills .image-wrapper', {delay:200, origin:'bottom',interval:400});
+  ScrollReveal().reveal('.form-container', {delay:2100, origin:'right',  opacity: 0,});
   ScrollReveal().reveal('.location', {delay:2100, origin:'left'});
   ScrollReveal().reveal('.text-wrapper, .underline', {delay:200, origin:'bottom'});
   

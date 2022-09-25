@@ -6,8 +6,8 @@
 {% tailwind_css %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.19.0/core.min.js"></script>
 <nav >
-    <div class="navbar-fix bg-slate-800 text-white w-full z-10 fixed -top-16 duration-75 border-slate-700 border-b-4 border-solid" id="navbar">
-        <div class="w-[100vh] mx-auto">
+    <div class="navbar-fix fixed ease-out duration-1000 hidden sm:block bg-slate-800 text-white w-screen z-10 -top-16 border-slate-700 border-b-4 border-solid" id="navbar">
+        <div class="">
             <ul class=" grid grid-cols-4 py-5 gap-0 text-center ">
                 <li><a href="#home" class="scrolling font-semibold">HOME</a></li>
                 <li><a href="#aboutme" class="scrolling font-semibold">ABOUT</a></li>
@@ -15,27 +15,26 @@
                 <li><a href="#contact" class="scrolling font-semibold">CONTACT</a></li>
             </ul>       
         </div>
-
     </div>
 </nav>
 
 <aside>
-    <div class="fixed text-white bottom-0 right-0 p-5 hidden text-5xl font-semibold text-white z-10" id="gotop">
+    <div class="fixed text-white bottom-0 right-0 p-5 hidden text-5xl font-semibold z-10" id="gotop">
         <a href="#aboutme" class="scrolling"><i class="fa-solid fa-circle-chevron-up my-9 cursor-pointer"></i></a>
     </div>
 </aside>
 
-<section class="h-screen w-full bg-slate-800" id="home">
+<section class="h-screen w-screen overflow-x-hidden bg-slate-800" id="home">
     <div id="particles-js" class="w-full h-screen bg-cover bg-center ">
         <div class="wrapper absolute h-max  inset-0 m-auto " >
             <div class="image-wrapper border-4 border-sky-700 rounded-full w-32 h-32 overflow-hidden mx-auto">
                 <img src="{% static 'images/photo.png' %}" class="object-cover h-full w-full p-[1px] rounded-full">
             </div>
-            <div class="flex text-wrapper text-4xl font-semibold text-white w-max mx-auto my-6">
+            <div class="text-wrapper text-3xl md:text-4xl font-semibold text-white w-max mx-auto my-6">
                 Hi <span class="animate-waving-hand">👋</span>
                 
             </div>     
-            <div class="text-4xl font-semibold text-white text-center my-6">
+            <div class="text-3xl md:text-4xl font-semibold text-white text-center my-6">
                 <h1 class="my-4"><span id="typewrite"></span></h1> 
             </div>   
         </div>        
@@ -46,56 +45,54 @@
     </div>
 </section>
 
-
-<section class="h-screen bg-slate-700 grid grid-rows-3" id="aboutme" >
-    <div class="wrapper xl:pt-[5%] lg:pt-[8%]">
-        <div class="text-wrapper text-4xl font-semibold text-white text-center">
+<section class="h-screen w-screen overflow-x-hidden bg-slate-700 grid grid-rows-[10%,auto,30%] py-20 " id="aboutme" >
+    <div class="wrapper">
+        <div class="text-wrapper text-4xl xl:font-bold font-semibold  text-white text-center">
             <h1>About Me</h1>
         </div>    
-        <div class="underline border-sky-600 border-b-4 border-solid m-auto w-20 py-1"></div>
+        <div class="underline border-sky-600 border-b-4 border-solid m-auto w-20"></div>
     </div>
-    <div class="texts px-45 pt-10 text-pl-48 text-white text-l font-light w-[80vh] mx-auto text-center">
-        <h1 class="text-3xl font-semibold text-sky-600">Let me introduce myself.</h1>
+    <div class="intro text-white text-l xl:text-lg font-light bold text-center h-[50%] my-auto">
+        <h1 class="text-2xl font-semibold xl:font- text-sky-600">Let me introduce myself.</h1>
         <br>
-        <p class="text-justify"> I've been a freelancer for almost a year, making automation scripts with selenium python, web scraping , and also creating web with django. In my free time, I always learn new things, because I like it. I will continue to make improvements, and learning new things.</p>
+        <p class="text-justify w-[80%] md:w-[60%] xl:w-[50%] overflow-hidden mx-auto font-light xl:font-normal leading-relaxed xl:leading-loose "> I've been a freelancer for almost a year, making automation scripts with selenium python, web scraping , and also creating web with django. In my free time, I always learn new things, because I like it. I will continue to make improvements, and learning new things.</p>
         <a href=""><h1 class="text-l font-semibold text-sky-600 my-4">DOWNLOAD CV</h1></a>
     </div>
-    <div class="texts grid grid-rows-2 justify-center py-16">
-        <div class="px-48 pt-10 text-pl-48 text-white text-l font-light w-[90vh] text-center">
-            <h1 class="text-3xl font-semibold text-sky-600">Skills</h1>
-            <br>
-            <div class="skills grid grid-cols-5">
-                <div class="image-wrapper w-20 h-20 rounded-full overflow-hidden border-4 border-sky-700 p-[2%]">
-                    <img src="{% static 'images/python.png' %}" alt="" class="object-cover rounded-full">
-                </div>
-                <div class="image-wrapper w-20 h-20 rounded-full overflow-hidden border-4 border-sky-700 p-[2%]">
-                    <img src="{% static 'images/django.png' %}" alt="" class="object-cover rounded-full">
-                </div>
-                <div class="image-wrapper w-20 h-20 rounded-full overflow-hidden border-4 border-sky-700 p-[2%]">
-                    <img src="{% static 'images/rest.png' %}" alt="" class="object-cover rounded-full">
-                </div>
-                <div class="image-wrapper w-20 h-20 rounded-full overflow-hidden border-4 border-sky-700 p-[2%]">
-                    <img src="{% static 'images/css-html.png' %}" alt="" class="object-cover rounded-full">
-                </div>
-                <div class="image-wrapper w-20 h-20 rounded-full overflow-hidden border-4 border-sky-700 p-[2%]">
-                    <img src="{% static 'images/flutter.png' %}" alt="" class="object-cover rounded-full">
-                </div>
+    <div class="skills w-[80%] md:w-[60%] xl:w-[50%] mx-auto  text-white text-l font-light text-center h-[50%] my-auto">
+        <h1 class="text-2xl font-semibold text-sky-600">Skills</h1>
+        <br>
+        <div class="skills grid grid-cols-5 justify-center gap-3 xl:gap-16">
+            <div class="image-wrapper w-30 h-30 mx-auto rounded-full overflow-hidden border-4 border-sky-700 p-1">
+                <img src="{% static 'images/python.png' %}" alt="" class="object-cover rounded-full">
+            </div>
+            <div class="image-wrapper w-30 h-30 mx-auto rounded-full overflow-hidden border-4 border-sky-700 p-1">
+                <img src="{% static 'images/django.png' %}" alt="" class="object-cover rounded-full">
+            </div>
+            <div class="image-wrapper w-30 h-30 mx-auto rounded-full overflow-hidden border-4 border-sky-700 p-1">
+                <img src="{% static 'images/rest.png' %}" alt="" class="object-cover rounded-full">
+            </div>
+            <div class="image-wrapper w-30 h-30 mx-auto rounded-full  overflow-hidden border-4 border-sky-700 p-1">
+                <img src="{% static 'images/css-html.png' %}" alt="" class="object-cover rounded-full">
+            </div>
+            <div class="image-wrapper w-30 h-30 mx-auto rounded-full overflow-hidden border-4 border-sky-700 p-1">
+                <img src="{% static 'images/flutter.png' %}" alt="" class="object-cover rounded-full">
             </div>
         </div>
+
     </div>
 </section>
 
-<section class="h-screen bg-slate-800 w-full" id="project">
-    <div class="wrapper  xl:pt-[5%] lg:pt-[8%]">
+<section class="h-screen w-screen overflow-x-hidden bg-slate-800 grid grid-rows-[10%,auto] py-20 " id="project">
+    <div class="wrapper ">
         <h1 class="text-wrapper text-4xl font-semibold text-white text-center">Project</h1>
         <div class="underline border-sky-600 border-b-4 border-solid m-auto w-20 py-1"></div>
         <br>
     </div>
-    <div class="gallery js-flickity bg-transparent xl:pt-20 lg:pt-8">
-        <div class="gallery-cell h-[60vh] grid grid-cols-2 small" id="gallery">
+    <div class="gallery js-flickity bg-transparent ">
+        <div class="gallery-cell grid grid-rows-[30%,70%] md:grid-cols-[50%,50%] md:grid-rows-[100%] xl:px-14 small" id="gallery">
             <div class="image ">
-                <div class="js-flickity bg-transparent h-[60vh]">
-                    <div class="gallery-cell">
+                <div class="js-flickity bg-transparent h-full md:h-[80%] md:pt-20 border border-solid">
+                    <div class="gallery-cell h-full w-full">
                         <img src="{% static 'images/2.png' %}" alt="">
                     </div>
                     <div class="gallery-cell">
@@ -112,88 +109,94 @@
                     </div>
                 </div>
             </div>
-            <div class="text ">
-                <h1 class="text-center text-sky-600 text-3xl font-semibold">Coffeshop Website</h1>
-                <p class="px-[10%] xl:pt-20 lg:pt-8 text-justify text-white">This website have 3 different user persmission, customer, staff, and admin. Customer can add and remove products to/from their cart while also specifying the quantity of each item. Staff can open dashboard page to see live order. Staff only have persmission to edit data, Admin can edit and delete data from dashboard.</p>
-                <p class="px-[10%] pt-2 text-justify text-white">• Made with django, html, css, javascript.</p>
-                <p class="px-[10%] pt-2 text-justify text-white">• Responsive website.</p>
-                <p class="px-[10%] pt-2 text-justify text-white">• Realtime dashboard.</p>
-                <div class="github-live-demo px-[10%] pt-20 text-white text-center">
-                    <p >Source code & Live preview</p>
-                    <a href="https://ngopikuy-production.up.railway.app/"><i class="fa-solid fa-link text-4xl pt-16 px-2"></i></a>
-                    <a href="https://github.com/cahyoadhi/ngopikuy"><i class="fa-brands fa-github text-4xl pt-16 px-2"></i></a>
+            <div class="project-1 h-[80%] my-auto ">
+                <h1 class="text-center text-sky-600 text-2xl font-semibold mb-2 xl:text-3xl">Coffeshop Website</h1>
+                <p class="px-[10%] text-justify text-white text-sm font-extralight mb-2 xl:text-base">This website have 3 different user persmission, customer, staff, and admin. Customer can add and remove products to/from their cart while also specifying the quantity of each item. Staff can open dashboard page to see live order. Staff only have persmission to edit data, Admin can edit and delete data from dashboard.</p>
+                <p class="px-[10%] text-justify text-white text-sm font-extralight xl:text-base">• Made with django, html, css, javascript.</p>
+                <p class="px-[10%]  text-justify text-white text-sm font-extralight xl:text-base">• Responsive website.</p>
+                <p class="px-[10%]  text-justify text-white text-sm font-extralight mb-4 xl:text-base">• Realtime dashboard.</p>
+                <div class="github-live-demo px-[10%] text-white text-center text-sm font-extralight ">
+                    <p class="mb-2 xl:text-base">Source code & Live preview</p>
+                    <a href="https://ngopikuy-production.up.railway.app/"><i class="fa-solid fa-link text-4xl px-2"></i></a>
+                    <a href="https://github.com/cahyoadhi/ngopikuy"><i class="fa-brands fa-github text-4xl px-2"></i></a>
                 </div>
-            </div>
         </div>
-        <div class="gallery-cell h-[60vh] grid grid-cols-2 small">
+           
+        </div>
+        <!-- end of project one -->
+        <div class="gallery-cell grid grid-rows-[30%,70%] md:grid-cols-[50%,50%] md:grid-rows-[100%] xl:px-14 small" id="gallery">
             <div class="image ">
-                <div class="js-flickity bg-transparent h-[60vh]">
-                    <div class="gallery-cell border border-solid">
+                <div class="js-flickity bg-transparent h-full md:h-[80%] md:pt-20 border border-solid">
+                    <div class="gallery-cell">
                         <img src="{% static 'images/a.png' %}" alt="">
                     </div>
-                    <div class="gallery-cell border border-solid">
+                    <div class="gallery-cell">
                         <img src="{% static 'images/b.png' %}" alt="">
                     </div>
-                    <div class="gallery-cell border border-solid">
+                    <div class="gallery-cell">
                         <img src="{% static 'images/c.png' %}" alt="">
                     </div>
-                    <div class="gallery-cell border border-solid">
+                    <div class="gallery-cell">
                         <img src="{% static 'images/d.png' %}" alt="">
                     </div>
                 </div>
             </div>
-            <div class="personal-web">
-                <h1 class="text-center text-sky-600 text-3xl font-semibold">Personal Website</h1>
-                <p class="px-[10%] xl:pt-20 lg:pt-8 text-justify text-white">This is my personal website which I will update regularly. Made with django, html, css, javascript.</p>
-                <p class="px-[10%] pt-5 text-justify text-white">Library that I used for this web:</p>
-                <p class="px-[10%] pt-2 text-justify text-white">• Django tailwind css.</p>
-                <p class="px-[10%] pt-2 text-justify text-white">• Jquery.</p>
-                <p class="px-[10%] pt-2 text-justify text-white">• Particle Js.</p>
-                <p class="px-[10%] pt-2 text-justify text-white">• Scroll Reveal.</p>
-                <p class="px-[10%] pt-2 text-justify text-white">• Sweet alert 2.</p>
-                <p class="px-[10%] pt-2 text-justify text-white">• Flickity.</p>
-                <div class="github-live-demo px-[10%] xl:pt-20 lg:pt-8 text-white text-center">
-                    <p >Source code & Live preview</p>
-                    <a href="/"><i class="fa-solid fa-link text-4xl pt-16 px-2"></i></a>
-                    <a href="https://github.com/cahyoadhi/personalweb"><i class="fa-brands fa-github text-4xl pt-16 px-2"></i></a>
+            <div class="project-2 h-[80%] my-auto ">
+                <h1 class="text-center text-sky-600 text-2xl font-semibold mb-2 xl:px-14">Personal Website</h1>
+                <p class="px-[10%] text-justify text-white text-sm font-extralight mb-2 xl:text-base">This is my personal website which I will update regularly. Made with django, html, css, javascript.</p>
+                <p class="px-[10%] text-justify text-white text-sm font-extralight xl:text-base">• Made with django, html, css, javascript.</p>
+                <p class="px-[10%]  text-justify text-white text-sm font-extralight xl:text-base">Library that I used for this web:</p>
+                <p class="px-[10%]  text-justify text-white text-sm font-extralight mb-4 xl:text-base">• Jquery.</p>
+                <p class="px-[10%]  text-justify text-white text-sm font-extralight mb-4 xl:text-base">• Particle Js.</p>
+                <p class="px-[10%]  text-justify text-white text-sm font-extralight mb-4 xl:text-base">• Scroll Reveal.</p>
+                <p class="px-[10%]  text-justify text-white text-sm font-extralight mb-4 xl:text-base">• Sweet alert 2.</p>
+                <p class="px-[10%]  text-justify text-white text-sm font-extralight mb-4 xl:text-base">• Flickity.</p>
+                <div class="github-live-demo px-[10%] text-white text-center text-sm font-extralight xl:text-base">
+                    <p class="mb-2">Source code & Live preview</p>
+                    <a href="/"><i class="fa-solid fa-link text-4xl px-2"></i></a>
+                    <a href="https://github.com/cahyoadhi/personalweb"><i class="fa-brands fa-github text-4xl px-2"></i></a>
                 </div>
             </div>
         </div>
-      </div>
+    </div>
+    
 </section>
 
-<section class="h-[100vh] overflow-hidden bg-slate-700" id="contact">
-    <div class="contact xl:pt-[5%] lg:pt-[8%] ">
+<section class="h-screen w-screen overflow-x-hidden bg-slate-700 grid grid-rows-[10%,auto,20%] py-20 xl:px-14" id="contact">
+    <div class="tittle-container contact h-[70%] my-auto">
         <div class="text-wrapper text-4xl font-semibold text-white text-center">
             <h1>Contact</h1>
         </div>    
-        <div class="underline border-sky-600 border-b-4 border-solid m-auto w-20 py-1"></div>
-        <div class="mail w-[50vw] mx-auto">
-            <form method="post">
-                {% csrf_token %}
-                <label for="fname" class="text-white">Name</label>
-                <input type="text" class="w-full p-4 resize-y mt-2 mb-4 rounded" name="name" minlength="3" placeholder="Your name.." required>
-            
-                <label for="lname" class="text-white">Subject</label>
-                <input type="text" class="w-full p-4 resize-y  mt-2 mb-4 rounded"  name="subject" minlength="3" placeholder="Your last name.." required>
+        <div class="underline border-sky-600 border-b-4 border-solid m-auto w-20"></div>
+    </div>
+    
+    <div class="form-container md:px-32">
+        <form method="post" class="px-11">
+            {% csrf_token %}
+            <label for="fname" class="text-white">Name</label>
+            <input type="text" class="w-full p-4 resize-y mt-2 mb-4 rounded" name="name" minlength="3" placeholder="Your name.." required>
+        
+            <label for="lname" class="text-white">Subject</label>
+            <input type="text" class="w-full p-4 resize-y  mt-2 mb-4 rounded"  name="subject" minlength="3" placeholder="Your last name.." required>
 
-            
-                <label for="subject" class="text-white">Message</label>
-                <textarea class="h-[25vh] w-full p-4 resize-y mt-2 mb-46 rounded" name="message" minlength="10" placeholder="Write something.." required></textarea>
-            
-                <input type="submit" value="Submit" class="w-24 bg-sky-700 text-white rounded py-2 hover:bg-sky-500">
-            
-            </form>
-        </div>
+        
+            <label for="subject" class="text-white">Message</label>
+            <textarea class="h-[25vh] w-full p-4 resize-y mt-2 mb-46 rounded" name="message" minlength="10" placeholder="Write something.." required></textarea>
+        
+            <input type="submit" value="Submit" class="w-24 bg-sky-700 text-white rounded py-2 hover:bg-sky-500">
+        
+        </form>
+    </div>
+
+    <div class="bottom-container">
         <div class="icon-sosial text-4xl font-semibold text-white text-center ">
-            <a href="mailto:cahyoadhianto2507@gmail.com"><i class="fa-solid fa-envelope text-5xl pt-16 px-2"></i></a>
-            <a href="https://www.linkedin.com/in/cahyo-adhianto-614a11208/"><i class="fa-brands fa-linkedin text-5xl pt-16 px-2"></i></a>
-            <a href="https://github.com/cahyoadhi"><i class="fa-brands fa-github text-5xl pt-16 px-2"></i></a>
+            <a href="mailto:cahyoadhianto2507@gmail.com"><i class="fa-solid fa-envelope text-4xl"></i></a>
+            <a href="https://www.linkedin.com/in/cahyo-adhianto-614a11208/"><i class="fa-brands fa-linkedin text-4xl"></i></a>
+            <a href="https://github.com/cahyoadhi"><i class="fa-brands fa-github text-4xl"></i></a>
         </div>
-        <div class="location  text-white text-center my-6">
-            <i class="fa-solid fa-location-dot text-4xl xl:pt-16 lg:pt-5  px-2"></i>
-            <p>Bekasi, West Java - Indonesia</p>
-            
+        <div class="location text-white text-center">
+            <i class="fa-solid fa-location-dot text-2xl"></i>
+            <p>Bekasi, West Java - Indonesia</p>   
         </div>
     </div>
 </section>
