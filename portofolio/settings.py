@@ -20,8 +20,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'personalweb.apps.PersonalwebConfig',
-    'tailwind',
-    'theme',
     'django_browser_reload', 
 ]
 
