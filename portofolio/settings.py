@@ -9,8 +9,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"
 
 INSTALLED_APPS = [
+    'fontawesomefree',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -19,19 +21,25 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'personalweb.apps.PersonalwebConfig',
     'tailwind',
-    'theme'
+    'theme',
+    'django_browser_reload',
     
 ]
 
 TAILWIND_APP_NAME = 'theme'
 
-TAILWIND_APP_NAME = 'theme'
+TAILWIND_DEV_MODE=True
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',

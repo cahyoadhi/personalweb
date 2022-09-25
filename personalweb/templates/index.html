@@ -1,19 +1,10 @@
+
 {% extends 'base.html' %}
+{% load tailwind_tags %}
 {% load static %}
 {% block content %}
-
-{% if messages %}  
-    {% for message in messages %}
-    <script type="text/javascript">
-        Swal.fire({
-            icon: 'success',
-            title: '{{message}}',
-        }).then((result) => {
-            window.location.href = "/"
-        })
-    </script>  
-    {% endfor %}
-{% endif %}
+{% tailwind_css %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.19.0/core.min.js"></script>
 <nav >
     <div class="navbar-fix bg-slate-800 text-white w-full z-10 fixed -top-16 duration-75 border-slate-700 border-b-4 border-solid" id="navbar">
         <div class="w-[100vh] mx-auto">
@@ -29,7 +20,7 @@
 </nav>
 
 <aside>
-    <div class="fixed text-white bottom-0 right-0 p-10 hidden text-5xl font-semibold text-white" id="gotop">
+    <div class="fixed text-white bottom-0 right-0 p-5 hidden text-5xl font-semibold text-white z-10" id="gotop">
         <a href="#aboutme" class="scrolling"><i class="fa-solid fa-circle-chevron-up my-9 cursor-pointer"></i></a>
     </div>
 </aside>
@@ -40,11 +31,13 @@
             <div class="image-wrapper border-4 border-sky-700 rounded-full w-32 h-32 overflow-hidden mx-auto">
                 <img src="{% static 'images/photo.png' %}" class="object-cover h-full w-full p-[1px] rounded-full">
             </div>
-            <div class="text-wrapper text-4xl font-semibold text-white text-center my-6">
-                <h1>Hi <span class="wave-emoji">👋</span></h1>
-                <h1 class="my-4"><span id="typewrite"></span></h1>
-            </div>      
-
+            <div class="flex text-wrapper text-4xl font-semibold text-white w-max mx-auto my-6">
+                Hi <span class="animate-waving-hand">👋</span>
+                
+            </div>     
+            <div class="text-4xl font-semibold text-white text-center my-6">
+                <h1 class="my-4"><span id="typewrite"></span></h1> 
+            </div>   
         </div>        
 
         <div class="icon-chevrons-bottom wrapper text-4xl font-semibold text-white text-center absolute h-max w-full bottom-0 pb-[5%]"> 
@@ -53,20 +46,21 @@
     </div>
 </section>
 
+
 <section class="h-screen bg-slate-700 grid grid-rows-3" id="aboutme" >
-    <div class="wrapper pt-[5%]">
-        <div class="text-wrapper text-4xl font-poppins font-semibold text-white text-center">
+    <div class="wrapper xl:pt-[5%] lg:pt-[8%]">
+        <div class="text-wrapper text-4xl font-semibold text-white text-center">
             <h1>About Me</h1>
         </div>    
         <div class="underline border-sky-600 border-b-4 border-solid m-auto w-20 py-1"></div>
     </div>
-    <div class="px-45 pt-10 text-pl-48 text-white text-l font-light w-[80vh] mx-auto text-center">
+    <div class="texts px-45 pt-10 text-pl-48 text-white text-l font-light w-[80vh] mx-auto text-center">
         <h1 class="text-3xl font-semibold text-sky-600">Let me introduce myself.</h1>
         <br>
         <p class="text-justify"> I've been a freelancer for almost a year, making automation scripts with selenium python, web scraping , and also creating web with django. In my free time, I always learn new things, because I like it. I will continue to make improvements, and learning new things.</p>
         <a href=""><h1 class="text-l font-semibold text-sky-600 my-4">DOWNLOAD CV</h1></a>
     </div>
-    <div class="grid grid-rows-2 justify-center py-16">
+    <div class="texts grid grid-rows-2 justify-center py-16">
         <div class="px-48 pt-10 text-pl-48 text-white text-l font-light w-[90vh] text-center">
             <h1 class="text-3xl font-semibold text-sky-600">Skills</h1>
             <br>
@@ -92,17 +86,85 @@
 </section>
 
 <section class="h-screen bg-slate-800 w-full" id="project">
-    <div class="wrapper pt-[5%]">
-        <h1 class="text-wrapper text-4xl font-poppins font-semibold text-white text-center">Project</h1>
+    <div class="wrapper  xl:pt-[5%] lg:pt-[8%]">
+        <h1 class="text-wrapper text-4xl font-semibold text-white text-center">Project</h1>
         <div class="underline border-sky-600 border-b-4 border-solid m-auto w-20 py-1"></div>
         <br>
-       
     </div>
+    <div class="gallery js-flickity bg-transparent xl:pt-20 lg:pt-8">
+        <div class="gallery-cell h-[60vh] grid grid-cols-2 small" id="gallery">
+            <div class="image ">
+                <div class="js-flickity bg-transparent h-[60vh]">
+                    <div class="gallery-cell">
+                        <img src="{% static 'images/2.png' %}" alt="">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="{% static 'images/1.png' %}" alt="">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="{% static 'images/3.png' %}" alt="">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="{% static 'images/4.png' %}" alt="">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="{% static 'images/5.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="text ">
+                <h1 class="text-center text-sky-600 text-3xl font-semibold">Coffeshop Website</h1>
+                <p class="px-[10%] xl:pt-20 lg:pt-8 text-justify text-white">This website have 3 different user persmission, customer, staff, and admin. Customer can add and remove products to/from their cart while also specifying the quantity of each item. Staff can open dashboard page to see live order. Staff only have persmission to edit data, Admin can edit and delete data from dashboard.</p>
+                <p class="px-[10%] pt-2 text-justify text-white">• Made with django, html, css, javascript.</p>
+                <p class="px-[10%] pt-2 text-justify text-white">• Responsive website.</p>
+                <p class="px-[10%] pt-2 text-justify text-white">• Realtime dashboard.</p>
+                <div class="github-live-demo px-[10%] pt-20 text-white text-center">
+                    <p >Source code & Live preview</p>
+                    <a href="https://ngopikuy-production.up.railway.app/"><i class="fa-solid fa-link text-4xl pt-16 px-2"></i></a>
+                    <a href="https://github.com/cahyoadhi/ngopikuy"><i class="fa-brands fa-github text-4xl pt-16 px-2"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-cell h-[60vh] grid grid-cols-2 small">
+            <div class="image ">
+                <div class="js-flickity bg-transparent h-[60vh]">
+                    <div class="gallery-cell border border-solid">
+                        <img src="{% static 'images/a.png' %}" alt="">
+                    </div>
+                    <div class="gallery-cell border border-solid">
+                        <img src="{% static 'images/b.png' %}" alt="">
+                    </div>
+                    <div class="gallery-cell border border-solid">
+                        <img src="{% static 'images/c.png' %}" alt="">
+                    </div>
+                    <div class="gallery-cell border border-solid">
+                        <img src="{% static 'images/d.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="personal-web">
+                <h1 class="text-center text-sky-600 text-3xl font-semibold">Personal Website</h1>
+                <p class="px-[10%] xl:pt-20 lg:pt-8 text-justify text-white">This is my personal website which I will update regularly. Made with django, html, css, javascript.</p>
+                <p class="px-[10%] pt-5 text-justify text-white">Library that I used for this web:</p>
+                <p class="px-[10%] pt-2 text-justify text-white">• Django tailwind css.</p>
+                <p class="px-[10%] pt-2 text-justify text-white">• Jquery.</p>
+                <p class="px-[10%] pt-2 text-justify text-white">• Particle Js.</p>
+                <p class="px-[10%] pt-2 text-justify text-white">• Scroll Reveal.</p>
+                <p class="px-[10%] pt-2 text-justify text-white">• Sweet alert 2.</p>
+                <p class="px-[10%] pt-2 text-justify text-white">• Flickity.</p>
+                <div class="github-live-demo px-[10%] xl:pt-20 lg:pt-8 text-white text-center">
+                    <p >Source code & Live preview</p>
+                    <a href="https://ngopikuy-production.up.railway.app/"><i class="fa-solid fa-link text-4xl pt-16 px-2"></i></a>
+                    <a href="https://github.com/cahyoadhi/ngopikuy"><i class="fa-brands fa-github text-4xl pt-16 px-2"></i></a>
+                </div>
+            </div>
+        </div>
+      </div>
 </section>
 
-<section class="h-[100vh] bg-slate-700" id="contact">
-    <div class="wrapper pt-[5%]">
-        <div class="text-wrapper text-4xl font-poppins font-semibold text-white text-center">
+<section class="h-[100vh] overflow-hidden bg-slate-700" id="contact">
+    <div class="contact xl:pt-[5%] lg:pt-[8%] ">
+        <div class="text-wrapper text-4xl font-semibold text-white text-center">
             <h1>Contact</h1>
         </div>    
         <div class="underline border-sky-600 border-b-4 border-solid m-auto w-20 py-1"></div>
@@ -110,26 +172,26 @@
             <form method="post">
                 {% csrf_token %}
                 <label for="fname" class="text-white">Name</label>
-                <input type="text" id="fname" name="name" minlength="3" placeholder="Your name.." required>
+                <input type="text" class="w-full p-4 resize-y mt-2 mb-4 rounded" name="name" minlength="3" placeholder="Your name.." required>
             
                 <label for="lname" class="text-white">Subject</label>
-                <input type="text" id="lname" name="subject" minlength="3" placeholder="Your last name.." required>
+                <input type="text" class="w-full p-4 resize-y  mt-2 mb-4 rounded"  name="subject" minlength="3" placeholder="Your last name.." required>
 
             
                 <label for="subject" class="text-white">Message</label>
-                <textarea  id="msg" name="message" minlength="10" placeholder="Write something.." style="height:200px" required></textarea>
+                <textarea class="h-[25vh] w-full p-4 resize-y mt-2 mb-46 rounded" name="message" minlength="10" placeholder="Write something.." required></textarea>
             
-                <input type="submit" value="Submit" class="w-24 bg-sky-700">
+                <input type="submit" value="Submit" class="w-24 bg-sky-700 text-white rounded py-2 hover:bg-sky-500">
             
             </form>
         </div>
-        <div class="text-wrapper text-4xl font-semibold text-white text-center ">
+        <div class="icon-sosial text-4xl font-semibold text-white text-center ">
             <a href="mailto:cahyoadhianto2507@gmail.com"><i class="fa-solid fa-envelope text-5xl pt-16 px-2"></i></a>
             <a href="https://www.linkedin.com/in/cahyo-adhianto-614a11208/"><i class="fa-brands fa-linkedin text-5xl pt-16 px-2"></i></a>
             <a href="https://github.com/cahyoadhi"><i class="fa-brands fa-github text-5xl pt-16 px-2"></i></a>
         </div>
-        <div class="text-wrapper  text-white text-center my-6">
-            <i class="fa-solid fa-location-dot text-4xl pt-16 px-2"></i>
+        <div class="location  text-white text-center my-6">
+            <i class="fa-solid fa-location-dot text-4xl xl:pt-16 lg:pt-5  px-2"></i>
             <p>Bekasi, West Java - Indonesia</p>
             
         </div>
@@ -137,27 +199,16 @@
 </section>
 
 <script>
-    $(document).ready(function() {
-    var aboveHeight = $('section').outerHeight();
-    height = aboveHeight - 10
-    heightTwo = aboveHeight*2-10
-
-    $(window).scroll(function(){
-        if ($(window).scrollTop() > height){
-            $('#navbar').css('top','0');
-        } 
-        else {
-            $('#navbar').css('top','-4rem');
-        }
-        if ($(window).scrollTop() > heightTwo){
-            $('#gotop').css('display','block');
-        } 
-        else {
-            $('#gotop').css('display','none');
-        }
-        
-    });
-    });
+    var app = document.getElementById('typewrite');
+        var typewriter = new Typewriter(app, {
+            loop: true
+        });
+        typewriter.typeString(`I'm <span class="text-sky-700">Cahyo Adhianto</span>.`)
+        .pauseFor(2500)
+        .deleteAll()
+        .typeString(`I love to learn <span class="text-sky-700">new things</span>.`)
+        .pauseFor(2500)
+        .deleteAll()
+        .start();
 </script>
-
 {% endblock %}

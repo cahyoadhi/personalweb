@@ -1,245 +1,51 @@
 <!DOCTYPE html>
 {% load static %}
+
 <html lang="en">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap');
+    body{
+    font-family: poppins, sans-serif;    
+    }
+</style>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>cahyoadhi</title>
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/flickity.css' %}"" media="screen">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 </head>
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap');
-    body{
-    font-family: poppins, sans-serif;
-    
-    }
-
-    .wave-emoji {
-        animation-duration: 1.8s;
-        animation-iteration-count: infinite;
-        animation-name: wave;
-        display: inline-block;
-        transform-origin: 70% 70%;
-        animation-fill-mode: forwards;
-        }
-        @keyframes wave {
-        0% {
-            transform: rotate(0deg);
-        }
-        10% {
-            transform: rotate(-10deg);
-        }
-        20% {
-            transform: rotate(12deg);
-        }
-        30% {
-            transform: rotate(-10deg);
-        }
-        40% {
-            transform: rotate(9deg);
-        }
-        50% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(0deg);
-        }
-        }
-
-        input[type=text], select, #msg{
-        width: 100%; /* Full width */
-        padding: 12px; /* Some padding */ 
-        border: 1px solid #ccc; /* Gray border */
-        border-radius: 4px; /* Rounded borders */
-        box-sizing: border-box; /* Make sure that padding and width stays in place */
-        margin-top: 6px; /* Add a top margin */
-        margin-bottom: 16px; /* Bottom margin */
-        resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-        }
-
-        /* Style the submit button with a specific background color etc */
-        input[type=submit] {
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        /* When moving the mouse over the submit button, add a darker green color */
-        input[type=submit]:hover {
-        background-color: #263191;
-        }
-
-
-</style>
-
-
-<body>
+<body >
+    {% if messages %}  
+        {% for message in messages %}
+        <script  type="text/javascript">
+            Swal.fire({
+                icon: 'success',
+                title: '{{message}}',
+                confirmButtonColor: '#006699',
+            }).then((result) => {
+                window.location.href = "/"
+            })
+        </script>  
+        {% endfor %}
+    {% endif %}
     {% block content %}
     {% endblock %}
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.19.0/core.min.js"></script>
-<script>
-    // TYPEWRITTER
 
-    var app = document.getElementById('typewrite');
-
-    var typewriter = new Typewriter(app, {
-        loop: true
-    });
-    typewriter.typeString(`I'm <span class="text-sky-700">Cahyo Adhianto</span>.`)
-    .pauseFor(2500)
-    .deleteAll()
-    .typeString(`I love to learn <span class="text-sky-700">new things</span>.`)
-    .pauseFor(2500)
-    .deleteAll()
-    .start();
-
-
-    // PARTICLE JS
-    particlesJS("particles-js", 
-    {
-        "particles": {
-        "number": {
-            "value": 9,
-            "density": {
-            "enable": false,
-            "value_area": 800
-            }
-        },
-        "color": {
-            "value": "#0369a1"
-        },
-        "shape": {
-            "type": "edge",
-            "stroke": {
-            "width": 0,
-            "color": "#000"
-            },
-            "polygon": {
-            "nb_sides": 6
-            },
-            "image": {
-            "src": "img/github.svg",
-            "width": 100,
-            "height": 100
-            }
-        },
-        "opacity": {
-            "value": 0.3,
-            "random": true,
-            "anim": {
-            "enable": false,
-            "speed": 1,
-            "opacity_min": 0.1,
-            "sync": false
-            }
-        },
-        "size": {
-            "value": 160,
-            "random": false,
-            "anim": {
-            "enable": true,
-            "speed": 10,
-            "size_min": 40,
-            "sync": false
-            }
-        },
-        "line_linked": {
-            "enable": false,
-            "distance": 200,
-            "color": "#ffffff",
-            "opacity": 1,
-            "width": 2
-        },
-        "move": {
-            "enable": true,
-            "speed": 4,
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-            "enable": false,
-            "rotateX": 600,
-            "rotateY": 1200
-            }
-        }
-        },
-        "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-            "onhover": {
-            "enable": false,
-            "mode": "grab"
-            },
-            "onclick": {
-            "enable": false,
-            "mode": "push"
-            },
-            "resize": true
-        },
-        "modes": {
-            "grab": {
-            "distance": 400,
-            "line_linked": {
-                "opacity": 1
-            }
-            },
-            "bubble": {
-            "distance": 400,
-            "size": 40,
-            "duration": 2,
-            "opacity": 8,
-            "speed": 3
-            },
-            "repulse": {
-            "distance": 200,
-            "duration": 0.4
-            },
-            "push": {
-            "particles_nb": 4
-            },
-            "remove": {
-            "particles_nb": 2
-            }
-        }
-        },
-        "retina_detect": true
-    }
-    );
-
-
-    $(document).ready(function(){
-    $(".scrolling").on('click', function(event) {
-
-        // Make sure this.hash has a value before overriding default behavior
-        if (this.hash !== "") {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-
-        // Store hash
-        var hash = this.hash;
-        $('html, body').animate({
-            scrollTop: $(hash).offset().top
-        }, 1000, function(){
-    
-            // Add hash (#) to URL when done scrolling (default click behavior)
-            window.location.hash = hash;
-        });
-        } // End if
-    });
-    });
-</script>
+<script src="{% static 'js/particles.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/flickity.js' %}"></script>
 
 </html>
