@@ -9,7 +9,7 @@ Setting django tailwind
 
 
 ```sh
-add 'tailwind', into setting.py on installed_apps
+add 'tailwind', into setting.py
 INSTALLED_APPS = [
      .......
     'tailwind',
